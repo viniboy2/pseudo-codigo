@@ -1,0 +1,50 @@
+Algoritmo "semnome"
+//
+//
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 11/06/2024
+Var
+   // Seção de Declarações das variáveis
+   nota1,nota2,nota3,nota4,media: real
+   faltas :inteiro
+   //preciso resolver o caso de dupla reprovaçao esta mostrando com  o fim
+Inicio
+   Escreva("digite a 1 nota ")
+   Leia(nota1)
+   Escreval("digite a 2 nota ")
+   Leia(nota2)
+   Escreva("digite a 3 nota ") //escreva vai na mesma linha escreval vai para linha debaixo
+   Leia(nota3)
+   Escreva("digite a 4 nota ")
+   Leia(nota4)
+   escreva("digite a quantidade de faltas")
+   leia(faltas)
+   media <- (nota1+nota2+nota3+nota4)/ 4
+   se((media >= 70)e (faltas < 25)) entao
+      escreva ("aprovado com a media ", media )
+   fimse
+    se ((media < 50) e (faltas >= 25) ) entao
+  escreva ("aluno reprovado por media ",media," e por  faltas:",faltas)
+  Se (x=1) então
+        Parar
+    Fim
+ fimse
+
+   se ((media < 50) ou (faltas >= 25) ) entao
+      se (faltas >= 25) entao
+         escreva ("aluno reprovado por faltas faltas:",faltas)
+      senao
+         escreva("aluno reprovado com a media",media)
+      fimse
+se ((media < 70)  e  (media > 50) e (faltas <25)) ENTAO
+         escreva ("aluno de recuperacao com  a media",faltas)
+      fimse
+
+
+
+
+
+
+
+Fimalgoritmo
