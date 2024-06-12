@@ -1,50 +1,43 @@
-Algoritmo "semnome"
-//
-//
+algoritmo "semnome"
 // Descrição   : Aqui você descreve o que o programa faz! (função)
 // Autor(a)    : Nome do(a) aluno(a)
 // Data atual  : 11/06/2024
+
 Var
    // Seção de Declarações das variáveis
-   nota1,nota2,nota3,nota4,media: real
-   faltas :inteiro
-   //preciso resolver o caso de dupla reprovaçao esta mostrando com  o fim
+   nota1, nota2, nota3, nota4, media: real
+   faltas: inteiro
+
 Inicio
-   Escreva("digite a 1 nota ")
+   Escreva("Digite a 1ª nota: ")//escreva vai na mesma linha escreval vai para linha debaixo
    Leia(nota1)
-   Escreval("digite a 2 nota ")
+   Escreval("Digite a 2ª nota: ")
    Leia(nota2)
-   Escreva("digite a 3 nota ") //escreva vai na mesma linha escreval vai para linha debaixo
+   Escreva("Digite a 3ª nota: ")
    Leia(nota3)
-   Escreva("digite a 4 nota ")
+   Escreva("Digite a 4ª nota: ")
    Leia(nota4)
-   escreva("digite a quantidade de faltas")
-   leia(faltas)
-   media <- (nota1+nota2+nota3+nota4)/ 4
-   se((media >= 70)e (faltas < 25)) entao
-      escreva ("aprovado com a media ", media )
-   fimse
-    se ((media < 50) e (faltas >= 25) ) entao
-  escreva ("aluno reprovado por media ",media," e por  faltas:",faltas)
-  Se (x=1) então
-        Parar
-    Fim
- fimse
+   Escreva("Digite a quantidade de faltas: ")
+   Leia(faltas)
 
-   se ((media < 50) ou (faltas >= 25) ) entao
-      se (faltas >= 25) entao
-         escreva ("aluno reprovado por faltas faltas:",faltas)
+   media <- (nota1 + nota2 + nota3 + nota4) / 4
+
+   se ((media >= 70) e (faltas < 25)) entao
+      escreval("Aprovado com a média ", media)
+   senao
+      se ((media < 50) e (faltas >= 25)) entao
+         escreval("Aluno reprovado por média ", media, " e por faltas: ", faltas)
       senao
-         escreva("aluno reprovado com a media",media)
+         se (media < 50) entao
+            escreval("Aluno reprovado por média ", media)
+         senao
+            se (faltas >= 25) entao
+               escreval("Aluno reprovado por faltas: ", faltas, " com a média ", media)
+            senao
+               escreval("Aluno de recuperação com a média ", media)
+            fimse
+         fimse
       fimse
-se ((media < 70)  e  (media > 50) e (faltas <25)) ENTAO
-         escreva ("aluno de recuperacao com  a media",faltas)
-      fimse
-
-
-
-
-
-
+   fimse
 
 Fimalgoritmo
