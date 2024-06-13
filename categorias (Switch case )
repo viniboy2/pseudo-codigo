@@ -1,4 +1,4 @@
-Algoritmo "categoria da natcao"
+  Algoritmo "categoria da natcao"
 // Descrição: Calcula o preço total da estadia em um hotel com base no número de diárias
 // Autor: [Nome do Aluno]
 // Data atual: 12/06/2024
@@ -37,7 +37,7 @@ Inicio
     CASO 20 ate 150
     categoria <- "senior"
     outrocaso
-    categoria <- idade invalida
+    categoria <- "idade invalida"
         fimescolha
         escreva ( "ola SR(a) " ,nome, " voce ira competir na categoria :",categoria)
 Fimalgoritmo
