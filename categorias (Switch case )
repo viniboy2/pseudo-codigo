@@ -37,7 +37,12 @@ Inicio
     CASO 20 ate 150
     categoria <- "senior"
     outrocaso
-    categoria <- "idade invalida"
+    categoria <- "erro"
         fimescolha
+        se (categoria = "erro") entao
+        escreva ("escreva uma idade valida entre 0 e 150")
+
+        senao
         escreva ( "ola SR(a) " ,nome, " voce ira competir na categoria :",categoria)
+       fimse
 Fimalgoritmo
