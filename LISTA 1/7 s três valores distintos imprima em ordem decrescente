@@ -1,4 +1,4 @@
-Algoritmo "lista1exerc7"// nao esta pronto 
+Algoritmo "lista1exerc7"
 // Disciplina   : [Linguagem e Lógica de Programação]
 // Professor   : Antonio Carlos Nicolodi 
 // Descrição   : Aqui você descreve o que o programa faz! (função)
@@ -17,9 +17,10 @@ leia(b)
 escreva("Informe o valor de c: ")
 leia(c)
 
-se a <> b e a <> c e b <> c entao
+se (a <> b) e (a <> c) e (b <> c) entao
+
    //quando a for o maior de todos
-   se a > b e a > c entao
+   se (a > b) e (a > c) entao
      se b > c entao
         escreva(a,b,c)
      senao
@@ -28,7 +29,7 @@ se a <> b e a <> c e b <> c entao
    fimse
    
    //quando b for o maior de todos
-   se b > a e b > c entao
+   se (b > a) e (b > c) entao
      se a > c entao
         escreva(b,a,c)
      senao
@@ -36,7 +37,16 @@ se a <> b e a <> c e b <> c entao
      fimse
    fimse
 
+ //quando c for o maior de todos
+ se (c > a) e (c > b) entao
+   se a > b entao
+     escreva(c,a,b)
+   senao
+     escreva(c,b,a)
+   fimse
+ fimse
+
 senao
-   escreva("Valores incorretos, inform 3 números distintos")
+   escreva("Valores incorretos, informe 3 números distintos")
 fimse
 Fimalgoritmo
