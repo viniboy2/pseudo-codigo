@@ -1,0 +1,29 @@
+Algoritmo "SequenciaFibonacci"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi
+// Descrição   : Gera os primeiros n números da sequência de Fibonacci
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 25/06/2024
+Var
+    numero1, numero2, sequencia, sequencia2, i, n : inteiro
+
+Inicio
+    numero1 <- 1
+    numero2 <- 1
+
+    escreva ("Quantos números da sequência você deseja gerar? ")
+    leia (n)
+
+    escreva (numero1, " ") // Primeiro número da sequência
+    escreva (numero2, " ") // Segundo número da sequência
+
+    para i de 3 ate n faca
+        sequencia <- numero1 + numero2
+        escreva (sequencia, " ")
+
+        // Atualiza os valores para a próxima iteração
+        numero1 <- numero2
+        numero2 <- sequencia
+    fimpara
+
+Fimalgoritmo
