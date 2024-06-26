@@ -1,0 +1,63 @@
+Algoritmo "semnome"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi 
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 26/06/2024
+Var
+// Seção de Declarações das variáveis 
+valor : inteiro
+funcao testanumero(num : inteiro):logico
+
+inicio
+   se num >= 0 entao
+     retorne verdadeiro
+   senao
+     retorne falso
+   fimse
+fimfuncao
+
+funcao primo(numero : inteiro):logico
+var
+  i, divexata : inteiro
+inicio
+   para i de 1 ate numero faca
+      se(numero % i = 0) entao
+         divexata <- divexata + 1
+      fimse
+   fimpara
+   se divexata = 2 entao
+      retorne verdadeiro
+   senao
+      retorne falso
+   fimse
+fimfuncao
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+Escreva("Informe um numero")
+leia(valor)
+se(testanumero(valor)) entao
+   se(primo(valor)) entao
+      escreva("O numero é primo")
+   senao
+      escreva("O numero nao é primo")
+   fimse
+senao
+   escreva("Numero invalido
+   ")
+fimse
+
+
+Fimalgoritmo
+
+
+
+
+
+
+
+
+
+
+
