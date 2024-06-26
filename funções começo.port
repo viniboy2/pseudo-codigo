@@ -1,0 +1,22 @@
+Algoritmo "semnome"
+// 
+//  
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 26/06/2024
+Var
+// Seção de Declarações das variáveis 
+x: inteiro
+funcao soma (a,b : inteiro) :inteiro
+retorne a + b
+fimfuncao
+      procedimento psoma (c,d: inteiro)
+
+Inicio
+escreval (c + d)
+fimprocedimento
+inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+ psoma(10,20)
+
+Fimalgoritmo
