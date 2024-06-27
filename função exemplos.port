@@ -1,0 +1,84 @@
+Algoritmo "funcaoprocedimento"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 26/06/2024
+Var
+// Seção de Declarações das variáveis
+valor, menu : inteiro
+opcao : caracter
+funcao testanumero(num : inteiro):logico
+inicio
+   se num >= 0 entao
+     retorne verdadeiro
+   senao
+     retorne falso
+   fimse
+fimfuncao
+
+funcao primo(numero : inteiro):logico
+var
+  i, divexata : inteiro
+inicio
+   para i de 1 ate numero faca
+      se(numero % i = 0) entao
+         divexata <- divexata + 1
+      fimse
+   fimpara
+   se divexata = 2 entao
+      retorne verdadeiro
+   senao
+      retorne falso
+   fimse
+fimfuncao
+
+procedimento quadrado(n : inteiro)
+inicio
+   escreva("O quadrado é", n*n)
+fimprocedimento
+
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc...
+opcao <- "S"
+
+enquanto opcao = "S" faca
+
+escreval("Menu de Opções")
+escreval("Digite: ")
+escreval("1 para testar número")
+escreval("2 para testar primo")
+escreval("3 para calcular quadrado")
+leia(menu)
+
+
+Escreva("Informe o valor: ")
+leia(valor)
+
+escolha menu entao
+  caso 1
+     se testanumero(valor) entao
+       escreval("Positivo")
+     senao
+       escreval("Negativo")
+     fimse
+  caso 2
+     se primo(valor) entao
+       escreval("é primo")
+     senao
+       escreval("Não é primo")
+     fimse
+  caso 3
+     quadrado(valor)
+
+  outrocaso
+    escreval("opcao invalida")
+  fimescolha
+  escreval
+  escreval("Deseja continuar? S para sim ")
+  escreval("Qualquer tecla para sair ")
+  leia(opcao)
+  limpatela
+fimenquanto
+Fimalgoritmo
