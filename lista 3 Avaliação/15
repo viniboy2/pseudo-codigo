@@ -1,0 +1,32 @@
+algoritmo "verifica_palindromo"
+var
+    palavra, palavra_invertida: caractere
+    i, tamanho: inteiro
+
+inicio
+    // Lê a string
+    escreva("Digite uma palavra: ")
+    leia(palavra)
+
+    // Inicializa a palavra_invertida como uma string vazia
+    palavra_invertida <- ""
+
+    // Calcula o comprimento da string manualmente
+    tamanho <- 0
+    enquanto palavra[tamanho + 1] <> " " faca
+        tamanho <- tamanho + 1
+    fimenquanto
+
+    // Inverte a string
+    para i de tamanho ate 1 passo -1 faca
+        palavra_invertida <- palavra_invertida + palavra[i]
+    fimpara
+
+    // Verifica se a palavra original é igual à invertida
+    se palavra = palavra_invertida entao
+        escreva("A palavra é um palíndromo.")
+    senao
+        escreva("A palavra não é um palíndromo.")
+    fimse
+fimalgoritmo
+
