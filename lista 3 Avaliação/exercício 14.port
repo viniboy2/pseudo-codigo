@@ -1,0 +1,31 @@
+Algoritmo "media_matriz"
+Var
+    matriz : vetor[1..3, 1..3] de inteiro
+    i, j : inteiro
+    soma, quantidade_elementos : inteiro
+    media : real
+
+Inicio
+
+    soma <- 0
+
+    quantidade_elementos <- 0
+
+
+    para i de 1 até 3 faca
+        para j de 1 até 3 faca
+          escreva("Digite o elemento [", i, ",", j, "]: ")
+           leia(matriz[i, j])
+
+           soma <- soma + matriz[i, j]
+
+ quantidade_elementos <- quantidade_elementos + 1
+        fimpara
+    fimpara
+
+
+    media <- soma / quantidade_elementos
+
+
+    escreva("A média dos elementos da matriz é: ", media:0:2)
+Fimalgoritmo
