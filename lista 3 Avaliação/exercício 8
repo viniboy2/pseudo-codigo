@@ -1,0 +1,18 @@
+Algoritmo "soma_vetor"
+Var
+
+    i : inteiro
+    vetor1 : vetor [1..10] de inteiro
+    soma : inteiro
+
+Inicio
+
+    soma <- 0
+    para i de 1 até 10 faça
+        escreva("Digite o seu ", i, "º número: ")
+        leia(vetor1[i])
+        limpatela
+        soma <- soma + vetor1[i]
+    fimpara
+    escreva("A soma dos números do vetor é: ", soma)
+Fimalgoritmo
