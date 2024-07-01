@@ -1,0 +1,21 @@
+Algoritmo "semnome"
+// 
+//  
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 01/07/2024
+Var
+// Seção de Declarações das variáveis 
+ i : inteiro
+ numero : inteiro
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+    escreval ("digite o seu numero ")
+    leia(numero)
+     para i de 1 até 10 faça
+     numero <- numero +1
+     escreva (numero)
+     fimpara
+
+Fimalgoritmo
