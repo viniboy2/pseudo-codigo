@@ -1,0 +1,34 @@
+algoritmo verifica_palindromo;
+var
+    palavra, palavra_invertida: caractere;
+    i, tamanho: inteiro;
+    eh_palindromo: logico;
+
+inicio
+    escreva("Digite uma palavra: ");
+    leia(palavra);
+
+    tamanho <- compr(palavra); // Obtém o tamanho da palavra
+
+    // Inverte a palavra
+    palavra_invertida <- "";
+    para i <- tamanho ate 1 passo -1 faca
+        palavra_invertida <- palavra_invertida + copia(palavra, i, 1);
+    fimpara
+
+    // Verifica se é um palíndromo
+    se palavra = palavra_invertida entao
+        eh_palindromo <- verdadeiro;
+    senao
+        eh_palindromo <- falso;
+    fimse
+
+    // Imprime o resultado
+    se eh_palindromo entao
+        escreva("A palavra digitada é um palíndromo.");
+    senao
+        escreva("A palavra digitada NÃO é um palíndromo.");
+    fimse
+
+fimalgoritmo
+
