@@ -3,7 +3,7 @@ var
     sala: vetor[1..8, 1..10] de caractere
     opcao, fileira, cadeira: inteiro
 
-// Procedimento para inicializar a sala com todas as poltronas disponíveis
+
 procedimento inicializar_sala()
 var
     i, j: inteiro
@@ -15,7 +15,6 @@ inicio
     fimpara
 Fimprocedimento
 
-// Procedimento para mostrar o mapa da sala
 procedimento mostrar_sala()
 var
     i, j: inteiro
@@ -30,51 +29,64 @@ inicio
     fimpara
 Fimprocedimento
 
-// Procedimento para efetuar a venda de um ingresso
 procedimento efetuar_venda(fileira, cadeira: inteiro)
 inicio
-    se (sala[fileira, cadeira] = "D") entao
-        sala[fileira, cadeira] <- "C"
-        escreval("Venda efetuada com sucesso!")
+    se ((fileira < 1) ou (fileira > 8) ou (cadeira < 1) ou (cadeira > 10)) entao
+        escreval("Erro: Número de fileira ou cadeira inválido.")
     senao
-        escreval("Erro: Poltrona não disponível para venda.")
+        se (sala[fileira, cadeira] = "D") entao
+            sala[fileira, cadeira] <- "C"
+            escreval("Venda efetuada com sucesso!")
+        senao
+            escreval("Erro: Poltrona não disponível para venda.")
+        fimse
     fimse
 Fimprocedimento
 
-// Procedimento para efetuar a reserva de um ingresso
 procedimento efetuar_reserva(fileira, cadeira: inteiro)
 inicio
-    se (sala[fileira, cadeira] = "D") entao
-        sala[fileira, cadeira] <- "R"
-        escreval("Reserva efetuada com sucesso!")
+    se ((fileira < 1) ou (fileira > 8) ou (cadeira < 1) ou (cadeira > 10)) entao
+        escreval("Erro: Número de fileira ou cadeira inválido.")
     senao
-        escreval("Erro: Poltrona não disponível para reserva.")
+        se (sala[fileira, cadeira] = "D") entao
+            sala[fileira, cadeira] <- "R"
+            escreval("Reserva efetuada com sucesso!")
+        senao
+            escreval("Erro: Poltrona não disponível para reserva.")
+        fimse
     fimse
 Fimprocedimento
 
-// Procedimento para cancelar uma reserva
+
 procedimento cancelar_reserva(fileira, cadeira: inteiro)
 inicio
-    se (sala[fileira, cadeira] = "R") entao
-        sala[fileira, cadeira] <- "D"
-        escreval("Reserva cancelada com sucesso!")
+    se ((fileira < 1) ou (fileira > 8) ou (cadeira < 1) ou (cadeira > 10)) entao
+        escreval("Erro: Número de fileira ou cadeira inválido.")
     senao
-        escreval("Erro: Não há reserva para esta poltrona.")
+        se (sala[fileira, cadeira] = "R") entao
+            sala[fileira, cadeira] <- "D"
+            escreval("Reserva cancelada com sucesso!")
+        senao
+            escreval("Erro: Não há reserva para esta poltrona.")
+        fimse
     fimse
 Fimprocedimento
 
-// Procedimento para confirmar uma reserva
+
 procedimento confirmar_reserva(fileira, cadeira: inteiro)
 inicio
-    se (sala[fileira, cadeira] = "R") entao
-        sala[fileira, cadeira] <- "C"
-        escreval("Reserva confirmada com sucesso!")
+    se ((fileira < 1) ou (fileira > 8) ou (cadeira < 1) ou (cadeira > 10)) entao
+        escreval("Erro: Número de fileira ou cadeira inválido.")
     senao
-        escreval("Erro: Não há reserva para esta poltrona.")
+        se (sala[fileira, cadeira] = "R") entao
+            sala[fileira, cadeira] <- "C"
+            escreval("Reserva confirmada com sucesso!")
+        senao
+            escreval("Erro: Não há reserva para esta poltrona.")
+        fimse
     fimse
 Fimprocedimento
 
-// Procedimento para mostrar as estatísticas
 procedimento mostrar_estatisticas()
 var
     i, j, reservas, confirmadas, disponiveis: inteiro
@@ -108,19 +120,19 @@ inicio
     escreval("Percentual de Reservas Confirmadas: ", percentual_confirmado:5:2, "%")
 Fimprocedimento
 
-// Programa principal
+
 inicio
     inicializar_sala()
     repita
-        escreval("********Menu********")
-        escreval("1. Verificar ocupação")
-        escreval("2. Efetuar venda")
-        escreval("3. Efetuar reserva")
-        escreval("4. Cancelar reserva")
-        escreval("5. Confirmar reserva")
-        escreval("6. Mostrar estatísticas")
-        escreval("7. Sair")
-        
+        escreval("***********Menu***********")
+        escreval("*1. Verificar ocupação   *")
+        escreval("*2. Efetuar venda        *")
+        escreval("*3. Efetuar reserva      *")
+        escreval("*4. Cancelar reserva     *")
+        escreval("*5. Confirmar reserva    *")
+        escreval("*6. Mostrar estatística  *")
+        escreval("*7. Sair                 *")
+        escreval("**************************")
         escreva("Escolha uma opção: ")
         leia(opcao)
 
