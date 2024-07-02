@@ -1,0 +1,162 @@
+algoritmo "Controle de Venda de Ingressos"
+var
+    sala: vetor[1..8, 1..10] de caractere
+    opcao, fileira, cadeira: inteiro
+
+// Procedimento para inicializar a sala com todas as poltronas disponíveis
+procedimento inicializar_sala()
+var
+    i, j: inteiro
+inicio
+    para i de 1 ate 8 faca
+        para j de 1 ate 10 faca
+            sala[i, j] <- ("D")
+        fimpara
+    fimpara
+Fimprocedimento
+
+// Procedimento para mostrar o mapa da sala
+procedimento mostrar_sala()
+var
+    i, j: inteiro
+inicio
+    escreval("Mapa da Sala:")
+    para i de 1 ate 8 faca
+        escreva("Fileira ", i, ": ")
+        para j de 1 ate 10 faca
+            escreva(sala[i, j], " ")
+        fimpara
+        escreval()
+    fimpara
+Fimprocedimento
+
+// Procedimento para efetuar a venda de um ingresso
+procedimento efetuar_venda(fileira, cadeira: inteiro)
+inicio
+    se (sala[fileira, cadeira] = "D") entao
+        sala[fileira, cadeira] <- "C"
+        escreval("Venda efetuada com sucesso!")
+    senao
+        escreval("Erro: Poltrona não disponível para venda.")
+    fimse
+Fimprocedimento
+
+// Procedimento para efetuar a reserva de um ingresso
+procedimento efetuar_reserva(fileira, cadeira: inteiro)
+inicio
+    se (sala[fileira, cadeira] = "D") entao
+        sala[fileira, cadeira] <- "R"
+        escreval("Reserva efetuada com sucesso!")
+    senao
+        escreval("Erro: Poltrona não disponível para reserva.")
+    fimse
+Fimprocedimento
+
+// Procedimento para cancelar uma reserva
+procedimento cancelar_reserva(fileira, cadeira: inteiro)
+inicio
+    se (sala[fileira, cadeira] = "R") entao
+        sala[fileira, cadeira] <- "D"
+        escreval("Reserva cancelada com sucesso!")
+    senao
+        escreval("Erro: Não há reserva para esta poltrona.")
+    fimse
+Fimprocedimento
+
+// Procedimento para confirmar uma reserva
+procedimento confirmar_reserva(fileira, cadeira: inteiro)
+inicio
+    se (sala[fileira, cadeira] = "R") entao
+        sala[fileira, cadeira] <- "C"
+        escreval("Reserva confirmada com sucesso!")
+    senao
+        escreval("Erro: Não há reserva para esta poltrona.")
+    fimse
+Fimprocedimento
+
+// Procedimento para mostrar as estatísticas
+procedimento mostrar_estatisticas()
+var
+    i, j, reservas, confirmadas, disponiveis: inteiro
+    total_confirmado, percentual_confirmado: real
+inicio
+    reservas <- 0
+    confirmadas <- 0
+    disponiveis <- 0
+
+    para i de 1 ate 8 faca
+        para j de 1 ate 10 faca
+            se (sala[i, j] = "R") entao
+                reservas <- reservas + 1
+            fimse
+            se (sala[i, j] = "C") entao
+                confirmadas <- confirmadas + 1
+            fimse
+            se (sala[i, j] = "D") entao
+                disponiveis <- disponiveis + 1
+            fimse
+        fimpara
+    fimpara
+
+    total_confirmado <- confirmadas * 25
+    percentual_confirmado <- (confirmadas / 80.0) * 100
+
+    escreval("Lugares Reservados: ", reservas)
+    escreval("Lugares Confirmados: ", confirmadas)
+    escreval("Lugares Disponíveis: ", disponiveis)
+    escreval("Valor Total Confirmado: R$ ", total_confirmado:5:2)
+    escreval("Percentual de Reservas Confirmadas: ", percentual_confirmado:5:2, "%")
+Fimprocedimento
+
+// Programa principal
+inicio
+    inicializar_sala()
+    repita
+        escreval("********Menu********")
+        escreval("1. Verificar ocupação")
+        escreval("2. Efetuar venda")
+        escreval("3. Efetuar reserva")
+        escreval("4. Cancelar reserva")
+        escreval("5. Confirmar reserva")
+        escreval("6. Mostrar estatísticas")
+        escreval("7. Sair")
+        
+        escreva("Escolha uma opção: ")
+        leia(opcao)
+
+        escolha opcao
+        caso 1
+            mostrar_sala()
+        caso 2
+            escreva("Digite a fileira (1-8): ")
+            leia(fileira)
+            escreva("Digite o número da cadeira (1-10): ")
+            leia(cadeira)
+            efetuar_venda(fileira, cadeira)
+        caso 3
+            escreva("Digite a fileira (1-8): ")
+            leia(fileira)
+            escreva("Digite o número da cadeira (1-10): ")
+            leia(cadeira)
+            efetuar_reserva(fileira, cadeira)
+        caso 4
+            escreva("Digite a fileira (1-8): ")
+            leia(fileira)
+            escreva("Digite o número da cadeira (1-10): ")
+            leia(cadeira)
+            cancelar_reserva(fileira, cadeira)
+        caso 5
+            escreva("Digite a fileira (1-8): ")
+            leia(fileira)
+            escreva("Digite o número da cadeira (1-10): ")
+            leia(cadeira)
+            confirmar_reserva(fileira, cadeira)
+        caso 6
+            mostrar_estatisticas()
+        caso 7
+            escreval("Saindo do programa...")
+        outrocaso
+            escreval("Opção inválida. Tente novamente.")
+        fimescolha
+    ate opcao = 7
+Fimalgoritmo
