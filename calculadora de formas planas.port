@@ -1,0 +1,85 @@
+Algoritmo "formasplanas"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi 
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 28/06/2024
+Var
+// Seção de Declarações das variáveis 
+menu  : inteiro
+opcao : caracter
+x,y,z : real
+
+funcao triangulo(base, altura : real):real
+   retorne base*altura/2
+fimfuncao
+
+funcao circulo(raio : real):real
+   retorne 3.14 * raio * raio
+fimfuncao
+
+funcao trapezio(basemaior, basemenor, altura: real):real
+   retorne (basemaior + basemenor) * altura / 2
+fimfuncao
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+opcao <- "s"
+
+enquanto (opcao = "s") ou (opcao = "S") faca
+
+escreval("CALCULADORA DE FORMAS PLANAS")
+escreval("Digite 1 para - TRIANGULO")
+escreval("Digite 2 para - RETANGULO")
+escreval("Digite 3 para - QUADRADO")
+escreval("Digite 4 para - TRAPEZIO")
+escreval("Digite 5 para - LOSANGO")
+escreval("Digite 6 para - CIRCULO")
+leia(menu)
+
+escolha menu entao
+  caso 1
+    Escreva("Informe a base: ")
+    leia(x)
+    Escreva("Informe a altura: ")
+    leia(y)
+    
+    se (x > 0) e (y > 0) entao
+       escreval("A área o triangulo é:",triangulo(x,y))
+    senao
+       escreva("Informe valores válidos!")
+    fimse
+
+  caso 2
+
+  caso 3
+
+  caso 4
+     Escreva("Informe a base maior: ")
+     leia(x)
+     Escreva("Informe a base menor: ")
+     leia(y)
+     Escreva("Informe a altura: ")
+     leia(z)
+     
+     escreval("A área do trapezio é: ",trapezio(x,y,z))
+
+  caso 5
+
+  caso 6
+     Escreva("Informe o raio: ")
+     leia(x)
+     
+     Escreval("A área o círculo é: ", circulo(x))
+
+  outrocaso
+     Escreval("Opção inválida. Verifique!")
+  fimescolha
+  Escreval
+  Escreval("Deseja continuar? Digite S para sim")
+  Escreval("Digite qualquer tecla para sair!")
+  leia(opcao)
+  limpatela
+  
+fimenquanto
+Fimalgoritmo
